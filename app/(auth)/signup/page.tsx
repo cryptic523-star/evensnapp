@@ -13,7 +13,7 @@ export default function SignupPage() {
       password: String(formData.get("password")),
       options: { data: { full_name: String(formData.get("fullName") || "") } },
     });
-    if (!error) redirect("/login");
+    if (!error) redirect("/dashboard");
     redirect("/signup");
   }
 
@@ -28,8 +28,8 @@ export default function SignupPage() {
         <p className="mb-7 text-[13px] text-t3">Start generating on-brand marketing images in minutes.</p>
         <form action={signUp} className="flex flex-col gap-3.5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[11px] font-medium uppercase tracking-wide text-t3">Full name</label>
-            <Input type="text" name="fullName" placeholder="Jamie Davis" required />
+            <label className="text-[11px] font-medium uppercase tracking-wide text-t3">Full name (optional)</label>
+            <Input type="text" name="fullName" placeholder="Jamie Davis" />
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="text-[11px] font-medium uppercase tracking-wide text-t3">Email</label>
